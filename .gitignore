@@ -1,0 +1,10 @@
+# Ignore output directories
+out/
+test-output/
+
+# Ignore temporary files
+*.tmp
+*.log
+
+# Ignore screenshot generation scripts (if any)
+screenshot.js
