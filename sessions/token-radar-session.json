@@ -1,0 +1,21 @@
+{
+  "session_id": "token-radar-01-build",
+  "harness": "Hermes Agent",
+  "harness_version": "0.1.0",
+  "provider": "upstage",
+  "model": "solar-pro4-260806",
+  "system": "Build token radar 01 entry",
+  "tools": ["execute_terminal", "read_file", "write_file", "browser_exec"],
+  "messages": [
+    {
+      "role": "user",
+      "content": "Tugas: token-radar-01. Download kit, setup repository, commit dan push.",
+      "timestamp": "2026-11-19T19:15:00Z"
+    },
+    {
+      "role": "assistant",
+      "content": "Mulai download kit dari make.fun...",
+      "timestamp": "2026-11-19T19:16:00Z"
+    }
+  ]
+}
