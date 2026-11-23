@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Token Radar — DeFi Protocol Board</title>
+  <link rel="stylesheet" href="app.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>🚀 Token Radar</h1>
+      <p>Pre-token DeFi protocol scoring board. Ranks protocols by implied value based on TVL, 7-day change, and maturity.</p>
+    </header>
+
+    <section id="stats" class="stats-panel">
+      <h2>📊 Board Statistics</h2>
+      <div class="stat-grid" id="statGrid">
+        <div class="stat-card">
+          <span class="stat-label">Total Protocols</span>
+          <span class="stat-value" id="totalProtocols">—</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-label">Top Implied Value</span>
+          <span class="stat-value" id="topValue">—</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-label">Avg Implied Value</span>
+          <span class="stat-value" id="avgValue">—</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-label">Date Generated</span>
+          <span class="stat-value" id="dateGenerated">—</span>
+        </div>
+      </div>
+    </section>
+
+    <section id="board">
+      <h2>🏆 Ranked Protocols</h2>
+      <div id="boardList" class="board-list">
+        <div class="empty-state">Loading board data...</div>
+      </div>
+    </section>
+
+    <footer>
+      <p>Token Radar • Built for make.fun competition token-radar-01</p>
+    </footer>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

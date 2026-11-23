@@ -1,0 +1,236 @@
+/* Token Radar Dashboard Styles */
+
+:root {
+  --bg: #0b0f1a;
+  --surface: #131a2b;
+  --surface2: #1c2538;
+  --border: #2a354f;
+  --text: #e8edf5;
+  --text-muted: #8a94a8;
+  --accent: #4cc9f0;
+  --accent2: #7b2ffc;
+  --green: #34d399;
+  --red: #f87171;
+  --gold: #fbbf24;
+  --radius: 12px;
+  --shadow: 0 8px 20px rgba(0,0,0,0.4);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  line-height: 1.5;
+  padding: 20px;
+}
+
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+header h1 {
+  font-size: 2rem;
+  margin: 0 0 6px;
+  background: linear-gradient(90deg, var(--accent), var(--accent2));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+header p {
+  color: var(--text-muted);
+  margin: 0 0 20px;
+}
+
+.stats-panel {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 16px 20px;
+  margin-bottom: 20px;
+}
+
+.stats-panel h2 {
+  font-size: 1.1rem;
+  margin: 0 0 12px;
+  color: var(--text);
+}
+
+.stat-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 12px;
+}
+
+.stat-card {
+  background: var(--surface2);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 12px;
+}
+
+.stat-label {
+  display: block;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  margin-bottom: 4px;
+}
+
+.stat-value {
+  display: block;
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: var(--accent);
+}
+
+.board-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.protocol-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 16px 18px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.protocol-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow);
+}
+
+.protocol-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 8px;
+}
+
+.rank-badge {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--gold);
+  min-width: 40px;
+  text-align: center;
+}
+
+.protocol-name {
+  font-size: 1.15rem;
+  font-weight: 600;
+  flex: 1;
+}
+
+.protocol-slug {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  background: var(--surface2);
+  padding: 2px 8px;
+  border-radius: 4px;
+  margin-left: 8px;
+  font-family: 'SF Mono', 'Consolas', monospace;
+}
+
+.market-metrics {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin: 8px 0;
+  font-size: 0.95rem;
+}
+
+.metric {
+  color: var(--text-muted);
+}
+
+.metric strong {
+  color: var(--text);
+  font-weight: 600;
+}
+
+.value-display {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--accent);
+  background: var(--surface2);
+  padding: 6px 12px;
+  border-radius: 6px;
+  display: inline-block;
+}
+
+.farm-steps {
+  margin-top: 10px;
+  border-top: 1px solid var(--border);
+  padding-top: 10px;
+}
+
+.farm-steps h4 {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  margin: 0 0 8px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.steps-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 8px;
+}
+
+.step-item {
+  background: var(--surface2);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 8px 10px;
+  font-size: 0.85rem;
+  line-height: 1.4;
+  color: var(--text-muted);
+}
+
+.step-item::before {
+  content: '•';
+  color: var(--accent);
+  margin-right: 6px;
+}
+
+.empty-state {
+  text-align: center;
+  color: var(--text-muted);
+  padding: 40px 20px;
+}
+
+footer {
+  margin-top: 30px;
+  padding-top: 16px;
+  border-top: 1px solid var(--border);
+  text-align: center;
+  color: var(--text-muted);
+  font-size: 0.85rem;
+}
+
+@media (max-width: 600px) {
+  .protocol-header {
+    flex-wrap: wrap;
+  }
+
+  .market-metrics {
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .steps-list {
+    grid-template-columns: 1fr;
+  }
+}
