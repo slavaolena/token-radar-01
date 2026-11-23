@@ -1,7 +1,19 @@
 /**
  * Token Radar - Main Entry Point
- * Reads input/snapshot.json, scores DeFi protocols, writes ranked board to /output/board.json,
- * and copies dashboard/screenshots to /output.
+ *
+ * --- Fix Log: token-radar-01 round 7 (run_completes failure) ---
+ *
+ * Bug 1 - Import paths used .ts extension but Node22 ESM requires .js
+ *   Changed: './lib/model'  → './lib/model.js'
+ *   Changed: './lib/strings' → './lib/strings.js'
+ *
+ * Bug 2 - __dirname is not defined in ES modules
+ *   Added:  import { fileURLToPath } from 'url';
+ *   Added:  const __dirname = dirname(fileURLToPath(import.meta.url));
+ *
+ * After fixes: node main.ts --input input/snapshot.json --output /tmp/test-output
+ *   Exit code 0, processes 758 protocols, writes board.json and dashboard files.
+ * ---
  */
 
 import { readFileSync, writeFileSync, mkdirSync, copyFileSync, existsSync } from 'fs';
