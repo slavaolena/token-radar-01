@@ -1,10 +1,17 @@
-/** The suffix for a regular English plural after a count. */
-export function pluralSuffix(count: number): string {
-  return count === 1 ? '' : 's';
+/**
+ * Small string utilities for token-radar-01.
+ */
+
+/**
+ * Format a value as a JSON line string with 2-space indentation.
+ */
+export function jsonLine(value: unknown): string {
+  return JSON.stringify(value, null, 2);
 }
 
-/** Serialize a JSON value on one line, optionally as a script assignment. */
-export function jsonLine(value: unknown, assignment?: string): string {
-  const json = JSON.stringify(value);
-  return assignment === undefined ? `${json}\n` : `${assignment}=${json};\n`;
+/**
+ * Return plural suffix: "s" when count is not 1, empty string otherwise.
+ */
+export function pluralSuffix(count: number): string {
+  return count === 1 ? "" : "s";
 }

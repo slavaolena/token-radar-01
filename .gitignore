@@ -1,10 +1,5 @@
-# Ignore output directories
+node_modules/
 out/
-test-output/
-
-# Ignore temporary files
+dist/
 *.tmp
 *.log
-
-# Ignore screenshot generation scripts (if any)
-screenshot.js
