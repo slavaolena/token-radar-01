@@ -5,9 +5,11 @@
  */
 
 import { readFileSync, writeFileSync, mkdirSync, copyFileSync, existsSync } from 'fs';
-import { join } from 'path';
-import { parseSnapshot, buildBoard, impliedValue } from './lib/model';
-import { jsonLine } from './lib/strings';
+import { join, dirname } from 'path';
+import { fileURLToPath } from 'url';
+const __dirname = dirname(fileURLToPath(import.meta.url));
+import { parseSnapshot, buildBoard, impliedValue } from './lib/model.js';
+import { jsonLine } from './lib/strings.js';
 
 // --- CLI argument parsing (simple) ---
 
